@@ -84,6 +84,13 @@ springfitnesstrainingboot
                     ├── training 
                       ├── base 
                         ├── Baseapplication.java 
+               ├── resources 
+                  ├── templates 
+                     ├── courses.html 
+                     ├── index.css
+                     ├── index.html 
+                     ├── result.html 
+                     ├── trainplan.html 
             ├── test 
                 ├── java 
                   ├── com 
