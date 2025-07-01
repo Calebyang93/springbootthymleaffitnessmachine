@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <iframe src="https://springapp.trainingplan.com" width="90%" width="360px" height="740px"></iframe>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, iniital-scale=1.0">
+    <title>Mobile View BA</title>
+    <p><Gymn Beach Avnue Screen<p>
+    <title>Mobile View Buffalo Sea </title>
+    <p>Gym Bufalo Sea </p>
+ </head>
+        <p th:text=${message}">
+            Join us and find out how we can cater our nutritious diet plan, supplements as well as sleeping patterns 
+            and workout to achieve your fitness goals and competitions. Email hello@fitbees.strong or cleandiets@fitbees.strong or membership@fitbees.strong </p>
+ <body>
+ <form>
+    <form th:action="@{/submitForm}" th:object="${user}" method="post">
+        <label>Member Name </label>
+        <input type="text" th:field="*{name}" /><br>
+        <label>Member Email Address </label>
+        <input type=""email" th:field="*{email}" /><br>
+        <label type="number">Mobile Number </label>
+        <input type="number">th:field="*{mobileno}" /><br>
+</form>
+
+<div class="seedstarterlist" th:unless="$[#lists.isEmpty(allSeedStarters)]">
+    <h2 th:text="#{title.list}">List of Seed Starters</h2>
+    <table>
+        <thead>
+            <tr>
+                <th th:text="#{[seedstarter.datePlanted]}">Date Planted </th>
+                <th th:text="#[seedstarter.productName]">Name of Products </th>
+                <th th:text="#{seedstarter.productType}">Product Type </th>
+                <th th:text="#{seedstarter.productCosts}">Product Cost</th>
+                <th th:number="#{seedstarter.productBarcodes}">Product Barcode</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr th:each="sb : ${allProductStarters}">
+                <td th:text="${{allProductStarters.prodctName}}">Electrolyte Supplements</td>
+                <td th:text="${{allProductStarters.dostProduct}}">14.95 </td>
+                <td th:text="${{allProductStarters.manufacturedDate}}">14/06/2005 </td>
+                <td th:text="${{allProductStarters.soldDate}}">14/05/2007</td>
+                <td th:text="#{|seedstarter.type.${allProductStarters.type}}">Product Barcode</td>
+                <td th:text="$[#strings.arrayJoin{
+                                #strings.arrayPrepend(sb.features, 'allProductStarters.productName.')}"> product Name </td>
+                <td th:text="$[#strings.arrayJoin(sb.features, allProductStarters.solddate)]">product sold date</td>
+                <td th:text="$[#strings.arrayJoin(sb.manufacturedDate, allProductStarters.manufacturedDate)]">product manufactured cost</td>
+                <td th:text="$[#strings.arrayJoin(sb.features, allProductStarters.manufacturedDate)]">product manufactured date</td>
+                <td th:text="$[#strings.arrayJoin(sb.allProductStarters.type, allProductStarters.productBarcode)]">product barcode</td>
+            </tr>
+            
+        </tbody>    
+</body>
+</html>
