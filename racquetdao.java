@@ -5,7 +5,7 @@ public class UserService {
     @Autowired
     private RacketDao racketDao;
 
-    public void registerUser(Racquet racquet) {
+    public void registerRacquet(Racquet racquet) {
         racquetDao.save(racquet);
     }
 
