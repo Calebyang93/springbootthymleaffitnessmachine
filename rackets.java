@@ -3,7 +3,7 @@
 public class Racquets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long prdtid;
     private String name;
     private String sport;
     private char model;
