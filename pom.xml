@@ -69,8 +69,14 @@
 			<groupId>org.hibernate.orm</groupId>
     		<artifactId>hibernate-core</artifactId>
     		<version>6.x.x</version> <!-- Use appropriate Hibernate version -->
-		</dependence>
+		</dependency>
 
+		<dependency>
+			Include database using mysql/oraclesql or mssql database or other database
+			    <groupId>mysql</groupId> <!-- Example for MySQL -->
+    			<artifactId>mysql-connector-java</artifactId>
+    			<version>8.x.x</version>
+		</dependecy>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-docker-compose</artifactId>
